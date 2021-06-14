@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "1073746776186",
+    "firebase_url": "https://smartwakala-default-rtdb.firebaseio.com",
+    "project_id": "smartwakala",
+    "storage_bucket": "smartwakala.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1073746776186:android:7fdf645ab59cd63ab32bc3",
+        "android_client_info": {
+          "package_name": "com.example.sajiliwakala"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1073746776186-btiuh7rlhqltnk7drrncbvakie0mqatv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcrmcEnhnpvZdZjL0e1tcHPALiOV_EiPk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1073746776186-btiuh7rlhqltnk7drrncbvakie0mqatv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1073746776186:android:b5f72749ccc6b0e1b32bc3",
+        "android_client_info": {
+          "package_name": "com.example.smartwakala"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1073746776186-btiuh7rlhqltnk7drrncbvakie0mqatv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcrmcEnhnpvZdZjL0e1tcHPALiOV_EiPk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1073746776186-btiuh7rlhqltnk7drrncbvakie0mqatv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">SajiliWakala</string>
+    <string name="endelea">Endelea</string>
+    <string name="msajili_wakala">MSAJILI WAKALA</string>
+    <string name="namba_ya_kitambulisho">Namba ya kitambulisho</string>
+    <string name="jina_la_kwanza">Jina la kwanza</string>
+    <string name="jina_la_kati">Jina la kati</string>
+    <string name="jina_la_ukoo">Jina la ukoo</string>
+    <string name="tarehe_ya_kuzaliwa">Tarehe ya kuzaliwa</string>
+    <string name="namba_ya_leseni">Namba ya leseni</string>
+    <string name="namba_ya_laini">Namba ya laini</string>
+    <string name="code_ya_wakala">Code ya wakala</string>
+    <string name="namba_ya_tin">Namba ya TIN</string>
+    <string name="mkoa_wa_biashara">Mkoa wa biashara</string>
+    <string name="sajili">SAJILI</string>
+</resources>
