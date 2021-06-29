@@ -10,20 +10,44 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button continueButton;
+    private Button sajiliWakalaButton, sajiliMtejaButton, floatWakalaButton, salioMtejaButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        continueButton = (Button) findViewById(R.id.continue_button);
-        continueButton.setOnClickListener(new View.OnClickListener() {
+        sajiliWakalaButton = (Button) findViewById(R.id.sajili_wakala_button);
+        sajiliMtejaButton = (Button) findViewById(R.id.sajili_mteja_button);
+        floatWakalaButton = (Button) findViewById(R.id.float_wakala_button);
+        salioMtejaButton = (Button) findViewById(R.id.salio_mteja_button);
+
+        sajiliWakalaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, WakalaRegistrationActivity.class));
             }
         });
 
+        sajiliMtejaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, CustomerRegistrationActivity.class));
+            }
+        });
+
+        floatWakalaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, FloatWakalaActivity.class));
+            }
+        });
+
+        salioMtejaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SalioMtejaActivity.class));
+            }
+        });
     }
 }
