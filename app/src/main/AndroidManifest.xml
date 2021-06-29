@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SajiliWakala">
-        <activity android:name=".WakalaRegistrationActivity"></activity>
+        <activity android:name=".FloatWakalaActivity"></activity>
+        <activity android:name=".SalioMtejaActivity" />
+        <activity android:name=".CustomerRegistrationActivity" />
+        <activity android:name=".WakalaRegistrationActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

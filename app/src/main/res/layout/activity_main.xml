@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-android:background="@drawable/smartwakala_background"
+
     android:fillViewport="true"
     tools:context=".MainActivity">
 
@@ -18,25 +18,74 @@ android:background="@drawable/smartwakala_background"
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="190dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="60dp"
             android:layout_marginBottom="30dp"
             app:srcCompat="@drawable/smartwakala_logo"
             tools:ignore="ContentDescription" />
 
         <Button
-            android:id="@+id/continue_button"
+            android:id="@+id/sajili_wakala_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="50dp"
+            android:backgroundTint="@color/teal_200"
+            android:textColor="#ffff"
+            android:textSize="18sp"
+            android:text="@string/sajili_wakala"
+            tools:targetApi="lollipop" />
+
+        <Button
+            android:id="@+id/sajili_mteja_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="50dp"
+            android:backgroundTint="@color/teal_200"
+            android:textColor="#ffff"
+            android:textSize="18sp"
+            android:text="@string/sajili_mteja"
+            tools:targetApi="lollipop" />
+
+        <Button
+            android:id="@+id/float_wakala_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="50dp"
+            android:backgroundTint="@color/teal_200"
+            android:textColor="#ffff"
+            android:textSize="18sp"
+            android:text="@string/float_wakala"
+            tools:targetApi="lollipop" />
+
+        <Button
+            android:id="@+id/salio_mteja_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
             android:layout_marginBottom="50dp"
             android:layout_marginStart="50dp"
             android:layout_marginLeft="50dp"
             android:layout_marginEnd="50dp"
             android:layout_marginRight="50dp"
-            android:backgroundTint="@color/design_default_color_on_primary"
-            android:textColor="#FF000000"
+            android:backgroundTint="@color/teal_200"
+            android:textColor="#ffff"
             android:textSize="18sp"
-            android:text="@string/endelea"/>
+            android:text="@string/salio_mteja"
+            tools:targetApi="lollipop" />
 
     </LinearLayout>
 

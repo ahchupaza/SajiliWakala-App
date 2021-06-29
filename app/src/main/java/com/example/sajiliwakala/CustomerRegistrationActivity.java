@@ -1,5 +1,8 @@
 package com.example.sajiliwakala;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.View;
@@ -8,9 +11,6 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -21,34 +21,29 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class WakalaRegistrationActivity extends AppCompatActivity {
+public class CustomerRegistrationActivity extends AppCompatActivity {
 
     private DatabaseReference dbRef;
 
-    private EditText ID_no, fname, mname, lname, birthdate, licence_no, SIM_no, code_no, TIN_no, busns_region, accBalance;
+    private EditText fname, mname, lname, birthdate, SIM_no, accBalance;
     private ProgressBar progressBar;
-    private Button registerWakalaButton;
+    private Button registerCustomerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wakala_registration);
+        setContentView(R.layout.activity_customer_registration);
 
-        dbRef = FirebaseDatabase.getInstance().getReference().child("Wakalas");
+        dbRef = FirebaseDatabase.getInstance().getReference().child("Customers");
 
-        ID_no = (EditText) findViewById(R.id.wakala_ID_No_);
-        fname = (EditText) findViewById(R.id.wakala_f_name);
-        mname = (EditText) findViewById(R.id.wakala_m_name);
-        lname = (EditText) findViewById(R.id.wakala_l_name);
-        birthdate = (EditText) findViewById(R.id.wakala_birthdate);
-        licence_no = (EditText) findViewById(R.id.wakala_licence_No_);
-        SIM_no = (EditText) findViewById(R.id.wakala_SIM_No_);
-        code_no = (EditText) findViewById(R.id.wakala_code_No_);
-        TIN_no = (EditText) findViewById(R.id.wakala_TIN_No_);
-        busns_region = (EditText) findViewById(R.id.wakala_business_region);
-        accBalance = (EditText) findViewById(R.id.wakala_balance);
+        fname = (EditText) findViewById(R.id.customer_f_name);
+        mname = (EditText) findViewById(R.id.customer_m_name);
+        lname = (EditText) findViewById(R.id.customer_l_name);
+        birthdate = (EditText) findViewById(R.id.customer_birthdate);
+        SIM_no = (EditText) findViewById(R.id.customer_SIM_No_);
+        accBalance = (EditText) findViewById(R.id.customer_balance);
 
-        progressBar = (ProgressBar) findViewById(R.id.wakala_register_loading);
+        progressBar = (ProgressBar) findViewById(R.id.customer_register_loading);
 
         // Calendar Dialog
         final Calendar myCalendar = Calendar.getInstance();
@@ -69,40 +64,30 @@ public class WakalaRegistrationActivity extends AppCompatActivity {
         birthdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new DatePickerDialog(WakalaRegistrationActivity.this, date, myCalendar
+                new DatePickerDialog(CustomerRegistrationActivity.this, date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
 
-        registerWakalaButton = (Button) findViewById(R.id.wakala_register_button);
-        registerWakalaButton.setOnClickListener(new View.OnClickListener() {
+        registerCustomerButton = (Button) findViewById(R.id.customer_register_button);
+        registerCustomerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                registerWakala();
+                registerCustomer();
             }
         });
     }
 
-    private void registerWakala() {
-        String ID = ID_no.getText().toString().trim();
+    private void registerCustomer() {
         String first_name = fname.getText().toString().trim();
         String middle_name = mname.getText().toString().trim();
         String last_name = lname.getText().toString().trim();
         String dob = birthdate.getText().toString().trim();
-        String licence = licence_no.getText().toString().trim();
         String SIM = SIM_no.getText().toString().trim();
-        String code = code_no.getText().toString().trim();
-        String TIN = TIN_no.getText().toString().trim();
-        String region = busns_region.getText().toString().trim();
-        double balance = Double.parseDouble(accBalance.getText().toString().trim());
+        double balance = Integer.parseInt(accBalance.getText().toString().trim());
 
-        if (ID.isEmpty()){
-            ID_no.setError("Haukujaza eneo hili!");
-            ID_no.requestFocus();
-            return;
-        }
         if (first_name.isEmpty()){
             fname.setError("Haukujaza eneo hili!");
             fname.requestFocus();
@@ -123,29 +108,9 @@ public class WakalaRegistrationActivity extends AppCompatActivity {
             birthdate.requestFocus();
             return;
         }
-        if (licence.isEmpty()){
-            licence_no.setError("Haukujaza eneo hili!");
-            licence_no.requestFocus();
-            return;
-        }
         if (SIM.isEmpty()){
             SIM_no.setError("Hukujaza eneo hili");
             SIM_no.requestFocus();
-            return;
-        }
-        if (code.isEmpty()){
-            code_no.setError("Hukujaza eneo hili");
-            code_no.requestFocus();
-            return;
-        }
-        if (TIN.isEmpty()){
-            TIN_no.setError("Haukujaza eneo hili!");
-            TIN_no.requestFocus();
-            return;
-        }
-        if (region.isEmpty()){
-            busns_region.setError("Hukujaza eneo hili");
-            busns_region.requestFocus();
             return;
         }
 //        if (balance.isEmpty()){
@@ -156,23 +121,22 @@ public class WakalaRegistrationActivity extends AppCompatActivity {
 
         progressBar.setVisibility(View.VISIBLE);
 
-        Wakala wakala =  new  Wakala(ID, first_name, middle_name, last_name, dob, licence, SIM, code, TIN, region, balance);
+        Customer customer =  new Customer(first_name, middle_name, last_name, dob, SIM, balance);
 
-        dbRef.push().setValue(wakala).addOnCompleteListener(new OnCompleteListener<Void>() {
+        dbRef.push().setValue(customer).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
 
                 if (task.isSuccessful()) {
 
-                    Toast.makeText(WakalaRegistrationActivity.this, "Wakala amesajiliwa kikamilifu!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(CustomerRegistrationActivity.this, "Mteja amesajiliwa kikamilifu!", Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
 
                 } else {
-                    Toast.makeText(WakalaRegistrationActivity.this, "Haujafanikisha, tafadhali jaribu tena!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(CustomerRegistrationActivity.this, "Haujafanikisha, tafadhali jaribu tena!", Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
                 }
             }
         });
     }
-
 }

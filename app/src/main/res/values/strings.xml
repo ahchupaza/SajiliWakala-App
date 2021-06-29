@@ -2,6 +2,10 @@
     <string name="app_name">SajiliWakala</string>
     <string name="endelea">Endelea</string>
     <string name="msajili_wakala">MSAJILI WAKALA</string>
+    <string name="sajili_wakala">SAJILI WAKALA</string>
+    <string name="sajili_mteja">SAJILI MTEJA</string>
+    <string name="float_wakala">FLOAT WAKALA</string>
+    <string name="salio_mteja">SALIO MTEJA</string>
     <string name="namba_ya_kitambulisho">Namba ya kitambulisho</string>
     <string name="jina_la_kwanza">Jina la kwanza</string>
     <string name="jina_la_kati">Jina la kati</string>
@@ -13,4 +17,15 @@
     <string name="namba_ya_tin">Namba ya TIN</string>
     <string name="mkoa_wa_biashara">Mkoa wa biashara</string>
     <string name="sajili">SAJILI</string>
+    <string name="msajili_mteja">MSAJILI MTEJA</string>
+    <string name="salio_la_akaunti">Salio la akaunti</string>
+    <string name="title_activity_float_wakala">FloatWakalaActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

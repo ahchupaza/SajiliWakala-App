@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
 
     android:fillViewport="true"
-    tools:context=".WakalaRegistrationActivity">
+    tools:context=".CustomerRegistrationActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,31 +20,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
-            android:text="@string/msajili_wakala"
+            android:text="@string/msajili_mteja"
             android:textSize="18sp"
             android:textColor="@color/teal_700"
             android:textStyle="bold"/>
 
         <EditText
-            android:id="@+id/wakala_ID_No."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginRight="50dp"
-            android:gravity="center_horizontal"
-            android:ems="10"
-            android:hint="@string/namba_ya_kitambulisho"
-            android:importantForAutofill="no"
-            android:inputType="number"
-            android:maxLength="10"
-            android:maxLines="1"
-            tools:text="@string/namba_ya_kitambulisho" />
-
-        <EditText
-            android:id="@+id/wakala_f_name"
+            android:id="@+id/customer_f_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -61,7 +43,7 @@
             tools:ignore="TextFields" />
 
         <EditText
-            android:id="@+id/wakala_m_name"
+            android:id="@+id/customer_m_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -78,7 +60,7 @@
             tools:ignore="TextFields" />
 
         <EditText
-            android:id="@+id/wakala_l_name"
+            android:id="@+id/customer_l_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -95,7 +77,7 @@
             tools:ignore="TextFields" />
 
         <EditText
-            android:id="@+id/wakala_birthdate"
+            android:id="@+id/customer_birthdate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -113,25 +95,7 @@
             tools:text="@string/tarehe_ya_kuzaliwa" />
 
         <EditText
-            android:id="@+id/wakala_licence_No."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginRight="50dp"
-            android:gravity="center_horizontal"
-            android:ems="10"
-            android:hint="@string/namba_ya_leseni"
-            android:importantForAutofill="no"
-            android:inputType="number"
-            android:maxLength="10"
-            android:maxLines="1"
-            tools:text="@string/namba_ya_leseni" />
-
-        <EditText
-            android:id="@+id/wakala_SIM_No."
+            android:id="@+id/customer_SIM_No."
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -149,59 +113,7 @@
             tools:text="@string/namba_ya_laini" />
 
         <EditText
-            android:id="@+id/wakala_code_No."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginRight="50dp"
-            android:gravity="center_horizontal"
-            android:ems="10"
-            android:hint="@string/code_ya_wakala"
-            android:importantForAutofill="no"
-            android:inputType="number"
-            android:maxLength="6"
-            android:maxLines="1"
-            tools:text="@string/code_ya_wakala" />
-
-        <EditText
-            android:id="@+id/wakala_TIN_No."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginRight="50dp"
-            android:gravity="center_horizontal"
-            android:ems="10"
-            android:hint="@string/namba_ya_tin"
-            android:importantForAutofill="no"
-            android:inputType="number"
-            android:maxLength="6"
-            android:maxLines="1"
-            tools:text="@string/namba_ya_tin" />
-
-        <EditText
-            android:id="@+id/wakala_business_region"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginRight="50dp"
-            android:gravity="center_horizontal"
-            android:ems="10"
-            android:hint="@string/mkoa_wa_biashara"
-            android:importantForAutofill="no"
-            android:inputType="textCapWords"
-            tools:text="@string/mkoa_wa_biashara" />
-
-        <EditText
-            android:id="@+id/wakala_balance"
+            android:id="@+id/customer_balance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -217,7 +129,7 @@
             tools:text="@string/salio_la_akaunti" />
 
         <ProgressBar
-            android:id="@+id/wakala_register_loading"
+            android:id="@+id/customer_register_loading"
             style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -229,7 +141,7 @@
             app:layout_constraintRight_toRightOf="parent" />
 
         <Button
-            android:id="@+id/wakala_register_button"
+            android:id="@+id/customer_register_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
