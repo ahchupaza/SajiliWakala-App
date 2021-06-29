@@ -25,7 +25,7 @@ public class WakalaRegistrationActivity extends AppCompatActivity {
 
     private DatabaseReference dbRef;
 
-    private EditText ID_no, fname, mname, lname, birthdate, licence_no, SIM_no, code_no, TIN_no, busns_region, accBalance;
+    private EditText ID_no, fname, mname, lname, birthdate, licence_no, SIM_no, code_no, TIN_no, busns_region, accBalance, PIN_no;
     private ProgressBar progressBar;
     private Button registerWakalaButton;
 
@@ -47,6 +47,7 @@ public class WakalaRegistrationActivity extends AppCompatActivity {
         TIN_no = (EditText) findViewById(R.id.wakala_TIN_No_);
         busns_region = (EditText) findViewById(R.id.wakala_business_region);
         accBalance = (EditText) findViewById(R.id.wakala_balance);
+        PIN_no = (EditText) findViewById(R.id.wakala_PIN);
 
         progressBar = (ProgressBar) findViewById(R.id.wakala_register_loading);
 
@@ -97,6 +98,7 @@ public class WakalaRegistrationActivity extends AppCompatActivity {
         String TIN = TIN_no.getText().toString().trim();
         String region = busns_region.getText().toString().trim();
         double balance = Double.parseDouble(accBalance.getText().toString().trim());
+        int PIN = Integer.parseInt(PIN_no.getText().toString().trim());
 
         if (ID.isEmpty()){
             ID_no.setError("Haukujaza eneo hili!");
@@ -153,10 +155,15 @@ public class WakalaRegistrationActivity extends AppCompatActivity {
 //            accBalance.requestFocus();
 //            return;
 //        }
+//        if (PIN.isEmpty()){
+//            PIN_no.setError("Hukujaza eneo hili");
+//            PIN_no.requestFocus();
+//            return;
+//        }
 
         progressBar.setVisibility(View.VISIBLE);
 
-        Wakala wakala =  new  Wakala(ID, first_name, middle_name, last_name, dob, licence, SIM, code, TIN, region, balance);
+        Wakala wakala =  new  Wakala(ID, first_name, middle_name, last_name, dob, licence, SIM, code, TIN, region, balance, PIN);
 
         dbRef.push().setValue(wakala).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override

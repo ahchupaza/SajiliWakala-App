@@ -128,6 +128,24 @@
             android:inputType="textCapWords"
             tools:text="@string/salio_la_akaunti" />
 
+        <EditText
+            android:id="@+id/customer_PIN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="50dp"
+            android:gravity="center_horizontal"
+            android:ems="10"
+            android:hint="@string/pin_ya_mteja"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="4"
+            android:maxLines="1"
+            tools:text="@string/pin_ya_mteja" />
+
         <ProgressBar
             android:id="@+id/customer_register_loading"
             style="?android:attr/progressBarStyle"

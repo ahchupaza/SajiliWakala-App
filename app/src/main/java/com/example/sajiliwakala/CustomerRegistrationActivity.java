@@ -25,7 +25,7 @@ public class CustomerRegistrationActivity extends AppCompatActivity {
 
     private DatabaseReference dbRef;
 
-    private EditText fname, mname, lname, birthdate, SIM_no, accBalance;
+    private EditText fname, mname, lname, birthdate, SIM_no, accBalance, PIN_no;
     private ProgressBar progressBar;
     private Button registerCustomerButton;
 
@@ -42,6 +42,7 @@ public class CustomerRegistrationActivity extends AppCompatActivity {
         birthdate = (EditText) findViewById(R.id.customer_birthdate);
         SIM_no = (EditText) findViewById(R.id.customer_SIM_No_);
         accBalance = (EditText) findViewById(R.id.customer_balance);
+        PIN_no = (EditText) findViewById(R.id.customer_PIN);
 
         progressBar = (ProgressBar) findViewById(R.id.customer_register_loading);
 
@@ -87,6 +88,7 @@ public class CustomerRegistrationActivity extends AppCompatActivity {
         String dob = birthdate.getText().toString().trim();
         String SIM = SIM_no.getText().toString().trim();
         double balance = Integer.parseInt(accBalance.getText().toString().trim());
+        int PIN = Integer.parseInt(PIN_no.getText().toString().trim());
 
         if (first_name.isEmpty()){
             fname.setError("Haukujaza eneo hili!");
@@ -118,10 +120,15 @@ public class CustomerRegistrationActivity extends AppCompatActivity {
 //            accBalance.requestFocus();
 //            return;
 //        }
+//        if (PIN.isEmpty()){
+//            SIM_no.setError("Hukujaza eneo hili");
+//            SIM_no.requestFocus();
+//            return;
+//        }
 
         progressBar.setVisibility(View.VISIBLE);
 
-        Customer customer =  new Customer(first_name, middle_name, last_name, dob, SIM, balance);
+        Customer customer =  new Customer(first_name, middle_name, last_name, dob, SIM, balance, PIN);
 
         dbRef.push().setValue(customer).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override

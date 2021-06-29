@@ -213,8 +213,26 @@
             android:ems="10"
             android:hint="@string/salio_la_akaunti"
             android:importantForAutofill="no"
-            android:inputType="textCapWords"
+            android:inputType="number"
             tools:text="@string/salio_la_akaunti" />
+
+        <EditText
+            android:id="@+id/wakala_PIN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="50dp"
+            android:gravity="center_horizontal"
+            android:ems="10"
+            android:hint="@string/pin_ya_wakala"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="4"
+            android:maxLines="1"
+            tools:text="@string/pin_ya_wakala" />
 
         <ProgressBar
             android:id="@+id/wakala_register_loading"
